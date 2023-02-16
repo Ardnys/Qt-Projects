@@ -30,6 +30,7 @@ class GraphWidget(PlotWidget):
 
     def enterEvent(self, event):
         self._zoomed = True
+        self.raise_()
         self._animation.setDirection(QtCore.QAbstractAnimation.Forward)
         self._animation.start()
         super().enterEvent(event)
@@ -47,7 +48,7 @@ class GraphWidget(PlotWidget):
         if self._animation.state() == 2:
             return super().paintEvent(a0)
         elif self._animation.state() == 0 and not self._zoomed:
-            print(f'size is set to {self._initial_size} -> {self.size()}')
+            # print(f'size is set to {self._initial_size} -> {self.size()}')
             self._initial_size = QtCore.QSize(self.size().width() -30, self.size().height()-30)
             self._zoomed_size = QtCore.QSize(self.size().width() + 50, self.size().height()+50)
             self.updateAnimation(self.size(), self._zoomed_size)
