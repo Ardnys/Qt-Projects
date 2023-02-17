@@ -32,19 +32,22 @@ class VideoThread(QtCore.QThread):
         HEIGHT = 480
         WIDTH = 640
         FPS = 30.0
+        CODEC = 'XVID' # XVID for .avi, mp4v for .mp4 format (case sensitive)
+        FORMAT = '.avi' # DON'T FORGET TO CHANGE BOTH 
+        OUTPUT_NAME = 'output' + FORMAT
 
         # set camera settings if needed
 
         # self._camera.set(cv2.CAP_PROP_CONVERT_RGB , 1)
         # self._camera.set(cv2.CAP_PROP_BUFFERSIZE, 100)
         # self._camera.set(cv2.CAP_PROP_FPS, FPS)
-        # self._camera.set(3, WIDTH)
-        # self._camera.set(4, HEIGHT)
+        # self._camera.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
+        # self._camera.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
         
 
-        fourcc = cv2.VideoWriter_fourcc(*'XVID') # XVID for .avi, mp4v for .mp4 format
+        fourcc = cv2.VideoWriter_fourcc(*CODEC) 
         # output parameters such as fps and size can be changed
-        self._output = cv2.VideoWriter("output.avi", fourcc, FPS, (WIDTH, HEIGHT))
+        self._output = cv2.VideoWriter(OUTPUT_NAME, fourcc, FPS, (WIDTH, HEIGHT))
         # further frustration reading: https://stackoverflow.com/questions/30509573/writing-an-mp4-video-using-python-opencv
 
         """
@@ -64,7 +67,7 @@ class VideoThread(QtCore.QThread):
                 self._output.write(cv2.flip(frame, 1))
 
                 qtimage = QtGui.QImage(flippedimage.data, flippedimage.shape[1], flippedimage.shape[0], QtGui.QImage.Format_RGB888)
-                picture = qtimage.scaled(640, 480, QtCore.Qt.KeepAspectRatio)
+                picture = qtimage.scaled(HEIGHT, WIDTH, QtCore.Qt.KeepAspectRatio)
                 self.videoupdate.emit(picture)
                       
     
