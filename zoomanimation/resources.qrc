@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="fonts">
+    <file>ChakraPetch-Light.ttf</file>
+    <file>ChakraPetch-Regular.ttf</file>
+  </qresource>
+</RCC>
