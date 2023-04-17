@@ -185,7 +185,7 @@ QLabel, QCheckBox {
      </layout>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout" stretch="4,0,1,1">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="4,0,1,1,1">
       <property name="leftMargin">
        <number>9</number>
       </property>
@@ -262,6 +262,9 @@ QLabel, QCheckBox {
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="BatteryIndicator" name="batteryWidget" native="true"/>
+      </item>
      </layout>
     </item>
    </layout>
@@ -273,6 +276,12 @@ QLabel, QCheckBox {
    <class>PlotWidget</class>
    <extends>QWidget</extends>
    <header>pyqtgraph</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BatteryIndicator</class>
+   <extends>QWidget</extends>
+   <header>myWidgets.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QPushButton, QMainWindow
 from PyQt5.QtCore import QPropertyAnimation, QPoint, QEasingCurve, QSize
-from PyQt5 import QtWidgets, uic
+from PyQt5 import QtWidgets, uic, QtCore, QtGui
 import pyqtgraph as pg
 import sys
 import resources
@@ -13,6 +13,8 @@ class Window(QMainWindow):
         temperature = [30,32,34,32,33,31,29,32,35,45]
         widget_list = [self.plotwidget_1, self.plotwidget_2, self.plotwidget_3, self.plotwidget_4, 
                        self.plotwidget_5, self.plotwidget_6, self.plotwidget_7, self.plotwidget_8]
+        
+        # self.batteryWidget.UpdateBattery(60)
         
         pen = pg.mkPen(color=((255, 211, 105)))
 
@@ -50,6 +52,9 @@ class Window(QMainWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
+    dir_ = QtCore.QDir("ChakraPetch")
+    _id = QtGui.QFontDatabase.addApplicationFont("ChakraPetch/ChakraPetch-Medium.ttf")
+    print(QtGui.QFontDatabase.applicationFontFamilies(_id))
     thing = Window()
     thing.show()
     sys.exit(app.exec_())
