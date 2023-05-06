@@ -15,7 +15,7 @@ class MainWindow(QtWidgets.QMainWindow):
                        self.widget_VOLTAGE, self.widget_TILT_X, self.widget_TILT_Y]
         label_list = [self.altitude_last, self.pressure_last, self.GPS_altitude_last, self.temperature_last,
                       self.voltage_last, self.tilt_x_last, self.tilt_y_last]
-        titles_list = ['Altitude (m)', 'Pressure (bar)', 'Altitude (m)', 'Temperature (°C)', 'Voltage (V)', 'Tilt (Degrees)', 'Tilt (Degrees)']
+        titles_list = ['Altitude (m)', 'Pressure (bar)', 'GPS_Altitude (m)', 'Temperature (°C)', 'Voltage (V)', 'Tilt_X (Degrees)', 'Tilt_Y (Degrees)']
 
         
         random_data = np.random.rand(7, 10)
@@ -28,7 +28,7 @@ class MainWindow(QtWidgets.QMainWindow):
         for (widget, data, label, description) in zip(plot_list, random_data, label_list, titles_list):
             widget.setBackground(("#393E46"))
             desc = description.split(' (')
-            title, unit = desc[0], desc[1]
+            title, unit = desc[0].replace('_', ' '), desc[1]
             # unit = unit.replace('(', '')
             unit = unit.replace(')', '')
         

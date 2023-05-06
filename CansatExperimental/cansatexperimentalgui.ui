@@ -264,15 +264,15 @@ color: rgb(255, 211, 105);</string>
          <item>
           <widget class="QPushButton" name="pushButton">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="maximumSize">
             <size>
-             <width>16777215</width>
-             <height>100</height>
+             <width>76</width>
+             <height>76</height>
             </size>
            </property>
            <property name="baseSize">
@@ -589,10 +589,80 @@ color: rgb(44, 51, 51)
            <number>4</number>
           </property>
           <item>
-           <widget class="PlotWidget" name="widget_PRESSURE" native="true"/>
+           <widget class="PlotWidget" name="widget_PRESSURE" native="true">
+            <property name="font">
+             <font>
+              <family>Chakra Petch Medium</family>
+              <pointsize>11</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <widget class="QLabel" name="pressure_last">
+             <property name="geometry">
+              <rect>
+               <x>360</x>
+               <y>2</y>
+               <width>71</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Chakra Petch Medium</family>
+               <pointsize>11</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background: none; color: rgb(77, 213, 153)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </widget>
           </item>
           <item>
-           <widget class="PlotWidget" name="widget_TEMPERATURE" native="true"/>
+           <widget class="PlotWidget" name="widget_TEMPERATURE" native="true">
+            <property name="font">
+             <font>
+              <family>Chakra Petch Medium</family>
+              <pointsize>11</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <widget class="QLabel" name="temperature_last">
+             <property name="geometry">
+              <rect>
+               <x>370</x>
+               <y>0</y>
+               <width>61</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Chakra Petch Medium</family>
+               <pointsize>11</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background: none; color: rgb(77, 213, 153)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </widget>
           </item>
           <item>
            <widget class="QLabel" name="label_GPS_SATS">
@@ -630,10 +700,80 @@ color: rgb(44, 51, 51)
            <number>4</number>
           </property>
           <item>
-           <widget class="PlotWidget" name="widget_ALTITUDE" native="true"/>
+           <widget class="PlotWidget" name="widget_ALTITUDE" native="true">
+            <property name="font">
+             <font>
+              <family>Chakra Petch Medium</family>
+              <pointsize>11</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <widget class="QLabel" name="altitude_last">
+             <property name="geometry">
+              <rect>
+               <x>370</x>
+               <y>0</y>
+               <width>61</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Chakra Petch Medium</family>
+               <pointsize>11</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background: none; color: rgb(77, 213, 153)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </widget>
           </item>
           <item>
-           <widget class="PlotWidget" name="widget_GPS_ALTITUDE" native="true"/>
+           <widget class="PlotWidget" name="widget_GPS_ALTITUDE" native="true">
+            <property name="font">
+             <font>
+              <family>Chakra Petch Medium</family>
+              <pointsize>11</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <widget class="QLabel" name="GPS_altitude_last">
+             <property name="geometry">
+              <rect>
+               <x>370</x>
+               <y>0</y>
+               <width>61</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Chakra Petch Medium</family>
+               <pointsize>11</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background: none; color: rgb(77, 213, 153)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </widget>
           </item>
          </layout>
         </item>
@@ -652,22 +792,147 @@ color: rgb(44, 51, 51)
            <number>4</number>
           </property>
           <item>
-           <widget class="PlotWidget" name="widget_VOLTAGE" native="true"/>
+           <widget class="PlotWidget" name="widget_VOLTAGE" native="true">
+            <property name="font">
+             <font>
+              <family>Chakra Petch Medium</family>
+              <pointsize>11</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <widget class="QLabel" name="voltage_last">
+             <property name="geometry">
+              <rect>
+               <x>370</x>
+               <y>0</y>
+               <width>61</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Chakra Petch Medium</family>
+               <pointsize>11</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background: none; color: rgb(77, 213, 153)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </widget>
           </item>
           <item>
-           <widget class="PlotWidget" name="widget_TILT_X" native="true"/>
+           <widget class="PlotWidget" name="widget_TILT_X" native="true">
+            <property name="font">
+             <font>
+              <family>Chakra Petch Medium</family>
+              <pointsize>11</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <widget class="QLabel" name="tilt_x_last">
+             <property name="geometry">
+              <rect>
+               <x>320</x>
+               <y>0</y>
+               <width>111</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Chakra Petch Medium</family>
+               <pointsize>11</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background: none; color: rgb(77, 213, 153)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </widget>
           </item>
           <item>
-           <widget class="PlotWidget" name="widget_TILT_Y" native="true"/>
+           <widget class="PlotWidget" name="widget_TILT_Y" native="true">
+            <property name="font">
+             <font>
+              <family>Chakra Petch Medium</family>
+              <pointsize>11</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <widget class="QLabel" name="tilt_y_last">
+             <property name="geometry">
+              <rect>
+               <x>320</x>
+               <y>0</y>
+               <width>111</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Chakra Petch Medium</family>
+               <pointsize>11</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background: none; color: rgb(77, 213, 153)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </widget>
           </item>
          </layout>
         </item>
        </layout>
       </item>
       <item>
-       <widget class="QTextEdit" name="textEdit">
+       <widget class="QTextEdit" name="telemetry_console">
+        <property name="font">
+         <font>
+          <family>Chakra Petch Medium</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">border: 1px solid rgb(238, 238, 238)</string>
+         <string notr="true">border: 1px solid rgb(238, 238, 238);
+font: 75 12pt &quot;Chakra Petch Medium&quot;;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Chakra Petch Medium'; font-size:12pt; font-weight:72; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Chakra Petch Medium 12';&quot;&gt;i don't have a telemetry example so idk if this is large enough but it's easy to change the dimension so i can adjust both the point size of this text and the height and width of this console. for now i will just make sure it looks good with text. i can't seem to change the font of this.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
