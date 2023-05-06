@@ -27,9 +27,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
         for (widget, data, label, description) in zip(plot_list, random_data, label_list, titles_list):
             widget.setBackground(("#393E46"))
+
             desc = description.split(' (')
             title, unit = desc[0].replace('_', ' '), desc[1]
-            # unit = unit.replace('(', '')
             unit = unit.replace(')', '')
         
             widget.setTitle(title, color=((255, 211, 105)))
@@ -38,6 +38,20 @@ class MainWindow(QtWidgets.QMainWindow):
             widget.plot(seconds, data, pen=pen, symbol='o', symbolSize=7, symbolPen=((238, 238, 238)), symbolBrush=((77, 213, 153)))
             label.setText(str(round(data[-1], 3)) + ' ' + unit)
         
+        long_random = np.random.rand(10)
+        long_random *= 10
+        lat_random = np.random.rand(10)
+        lat_random *= 10
+        self.widget_GPS_COORDINATES.setBackground(("#393E46"))
+        self.widget_GPS_COORDINATES.setTitle('GPS Coordinates', color=((255, 211, 105)))
+        self.widget_GPS_COORDINATES.setLabel('left', 'Longitude (Degrees)', **styles)
+        self.widget_GPS_COORDINATES.setLabel('bottom', 'Latitude (Degrees)', **styles)
+        self.widget_GPS_COORDINATES.plot(long_random, lat_random, pen=pen, symbol='x', symbolSize=7, symbolPen=((238, 238, 238)), symbolBrush=((77, 213, 153)))
+        self.coordinates_last.setText(str(round(long_random[-1], 3)) + ' N ' + str(round(lat_random[-1], 3)) + ' W')
+
+        for (long, lat) in zip(long_random, lat_random):
+            self.telemetry_console.append('(' + str(round(long, 2)) + '), (' + str(round(lat, 2)) + ')')
+
         # self.telemetry_console.setFontFamily("Chakra Petch")
 
         logo_pixmap = QtGui.QPixmap('canbeelogosmall.jpg')
